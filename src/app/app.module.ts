@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PeliculaAltaComponent } from './components/pelicula-alta/pelicula-alta.component';
 import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
@@ -18,6 +18,11 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreModule } fr
 import { environment } from 'src/environments/environment';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 
+//Api
+
+import { HttpClientModule } from '@angular/common/http';
+import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,7 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
     ActorListadoComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
+    TablaPaisesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
     FormsModule,
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
